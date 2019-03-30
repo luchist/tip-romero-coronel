@@ -1,5 +1,6 @@
 # ParkAdmin - UNQ Trabajo de Inserción Profesional 2019c1
 
+![park_admin logo](https://github.com/luchist/tip-romero-coronel/blob/master/resources/img/pa_logo.png)
 
 ## ¿Qué es ParkAdmin?
 
