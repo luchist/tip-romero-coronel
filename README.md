@@ -3,7 +3,7 @@
 
 ## ¿Qué es ParkAdmin?
 
-ParkAdmin, en pocas palabras, es una aplicacion que permite al usuario crear un estacionamiento y despues administrarlo. Uno puede decidir desde cuantos espacio de cochera tiene hasta marcar cual espacio esta ocupado o no. Esta pensado para alguien que que admnistra un estacionamiento y busca hacerlo de manera facil y rapida.
+ParkAdmin, en pocas palabras, es una aplicacion que permite al usuario crear un estacionamiento y después administrarlo. Uno puede decidir desde cuántos espacios de cochera tiene hasta marcar cuál espacio está ocupado o no. Está pensado para alguien que admnistra un estacionamiento y busca hacerlo de manera fácil y rápida.
 
 ## Planificación
 
