@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'parkadmin-webapp';
+  title = 'ParkAdmin';
+
+  opened = true;
+  events = [];
+  constructor() {};
 }

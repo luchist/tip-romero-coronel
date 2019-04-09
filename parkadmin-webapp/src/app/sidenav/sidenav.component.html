@@ -1,0 +1,31 @@
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
+      Aca van los botones
+      <div>
+        <button color="primary" mat-button (click)="sidenav.toggle()">
+          <i class="fas fa-car-side"></i>
+        </button>
+
+        <button mat-button color="primary">
+          Primary
+        </button>
+
+      </div>>
+    </mat-sidenav>
+    
+
+    <mat-sidenav-content>
+      <p>
+        {{opened}}
+      </p>
+      <p>
+        <button color="primary" mat-button (click)="sidenav.toggle()">sidenav.toggle()</button>
+      </p>
+      <p>Events:</p>
+      <div class="example-events">
+        <div *ngFor="let e of events">{{e}}</div>
+      </div>
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>
