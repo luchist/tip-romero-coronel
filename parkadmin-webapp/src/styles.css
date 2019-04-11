@@ -5,3 +5,11 @@ body {
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
 }
+
+.drawing{
+  cursor:wait;
+}
+
+.notDrawing{
+  cursor: default;
+}
