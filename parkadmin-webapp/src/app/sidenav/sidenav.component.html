@@ -1,31 +1,36 @@
 <mat-sidenav-container>
-
-    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
-      Aca van los botones
-      <div>
-        <button color="primary" mat-button (click)="sidenav.toggle()">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    Aca van los botones
+    <div>
+      <mat-card>
+        <button color="primary" mat-raised-button (click)="sidenav.toggle()">
           <i class="fas fa-car-side"></i>
         </button>
 
         <button mat-button color="primary">
-          Primary
+            <i class="fas fa-bicycle"></i>
         </button>
+      </mat-card>
 
-      </div>>
-    </mat-sidenav>
-    
+      <mat-card>
+        <button mat-button>All</button>
+        <button mat-raised-button>Of</button>
+        <button mat-raised-button color="primary">The</button>
+        <button mat-raised-button color="accent">Buttons</button>
+      </mat-card>
 
-    <mat-sidenav-content>
-      <p>
-        {{opened}}
-      </p>
-      <p>
-        <button color="primary" mat-button (click)="sidenav.toggle()">sidenav.toggle()</button>
-      </p>
-      <p>Events:</p>
-      <div class="example-events">
-        <div *ngFor="let e of events">{{e}}</div>
-      </div>
-    </mat-sidenav-content>
-    
+    </div>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+    <p>
+      Toolbar abierta: {{opened}}
+    </p>
+    <p>
+      <button color="primary" mat-button (click)="sidenav.toggle()">
+          <i class="fas fa-bars"></i>
+      </button>
+    </p>
+  </mat-sidenav-content>
 </mat-sidenav-container>

@@ -9,6 +9,5 @@ export class AppComponent {
   title = 'ParkAdmin';
 
   opened = true;
-  events = [];
-  constructor() {};
+  constructor() {}
 }
