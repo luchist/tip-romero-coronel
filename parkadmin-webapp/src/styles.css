@@ -7,7 +7,7 @@ body {
 }
 
 .drawing{
-  cursor:wait;
+  cursor:url('https://img.icons8.com/material/48/000000/car.png'), auto;
 }
 
 .notDrawing{
