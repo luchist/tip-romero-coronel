@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+  <mat-sidenav #sidenav [opened]="true"disableClose>
     Aca van los botones
     <div>
       <mat-card>
@@ -25,14 +25,7 @@
   </mat-sidenav>
 
 
-  <mat-sidenav-content>
-    <p>
-      Toolbar abierta: {{opened}}
-    </p>
-    <p>
-      <button color="primary" mat-button (click)="sidenav.toggle()">
-          <i class="fas fa-bars"></i>
-      </button>
-    </p>
+  <mat-sidenav-content id="contenido">
+      <app-nivel-detail></app-nivel-detail>
   </mat-sidenav-content>
 </mat-sidenav-container>

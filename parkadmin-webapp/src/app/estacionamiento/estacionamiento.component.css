@@ -1,0 +1,20 @@
+mat-sidenav, mat-sidenav-content {
+    padding: 16px;
+    color: #000000;
+}
+
+.mat-drawer-container{
+    padding-bottom: 100%;
+}
+
+.mat-drawer{
+    background-color: blueviolet;
+}
+
+.mat-spacer{
+    padding-bottom: 10px;
+}
+
+#contenido{
+    background-color: rgb(187, 184, 184);
+}

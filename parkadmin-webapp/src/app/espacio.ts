@@ -15,7 +15,7 @@ export class Espacio {
 
 class Auto extends Espacio {
 
-    constructor(x:number, y:number) {
+    constructor(x: number, y: number) {
         super(x,y,4.5,2.5);
     }
 
@@ -23,7 +23,7 @@ class Auto extends Espacio {
 
 class Moto extends Espacio {
 
-    constructor(x:number, y:number) {
+    constructor(x: number, y: number) {
         super(x,y,2.5,1.2);
     }
 

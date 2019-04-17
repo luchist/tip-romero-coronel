@@ -15,15 +15,17 @@ import {
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { EstacionamientoComponent } from './estacionamiento/estacionamiento.component';
+import { NivelDetailComponent } from './nivel-detail/nivel-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    EstacionamientoComponent,
+    NivelDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,6 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   faCarSide = faCarSide;
 }
