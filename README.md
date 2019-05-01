@@ -9,3 +9,6 @@ ParkAdmin, en pocas palabras, es una aplicacion que permite al usuario crear un 
 ## Planificación
 
 Información sobre el backlog esta [aqui en Trello](https://trello.com/b/oXajPbmS/tip-de-cochera-%F0%9F%9A%97).
+
+## Mas Información
+Para más información sobre los entregables dirigirse a la wiki.

@@ -1,0 +1,43 @@
+    <p>
+    <mat-form-field class="full-width" >
+        <mat-label>Ancho</mat-label>
+        <input matInput placeholder="Ancho">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width" >
+        <mat-label>Alto</mat-label>
+        <input matInput placeholder="Alto">
+      </mat-form-field>
+    </p>
+    <mat-grid-list cols="2" rowHeight="2:1">
+<mat-grid-tile><button mat-fab color="primary" (click)="draw()">
+<fa-layers>
+  <fa-icon [icon]="['fas', 'car-side']" size="2x" transform="left-7"></fa-icon>
+  <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-12 up-9"></fa-icon>
+</fa-layers>
+</button></mat-grid-tile>
+      <mat-grid-tile><button mat-fab color="primary">
+<fa-layers>
+  <fa-icon [icon]="['fas', 'motorcycle']" size="2x" transform="left-8"></fa-icon>
+  <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-14 up-9"></fa-icon>
+</fa-layers>
+</button></mat-grid-tile>
+      <mat-grid-tile><button mat-fab color="primary">
+<fa-layers>
+  <fa-icon [icon]="['fas', 'shuttle-van']" size="2x" transform="left-8"></fa-icon>
+  <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-14 up-9"></fa-icon>
+</fa-layers>
+</button></mat-grid-tile>
+      <mat-grid-tile><button mat-fab color="primary">
+<fa-layers>
+  <fa-icon [icon]="['fas', 'wheelchair']" size="2x" transform="left-4"></fa-icon>
+  <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-12 up-9"></fa-icon>
+</fa-layers>
+</button></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-paginator class="paginator" [length]="100"
+                   [pageSize]="1"
+                   (page)="pageEvent = $event">
+    </mat-paginator>
