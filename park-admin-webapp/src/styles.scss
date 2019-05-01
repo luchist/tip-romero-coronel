@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$park-admin-webapp-primary: mat-palette($mat-green, 500 );
+$park-admin-webapp-accent: mat-palette($mat-grey, 50);
+
+$park-admin-webapp-warn: mat-palette($mat-red);
+
+$park-admin-webapp-theme: mat-dark-theme($park-admin-webapp-primary, $park-admin-webapp-accent, $park-admin-webapp-warn);
+
+@include angular-material-theme($park-admin-webapp-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
