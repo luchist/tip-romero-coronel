@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EstacEdicionComponent } from './estac-edicion.component';
+import { EstacComponent } from './estac.component';
 
-describe('EstacEdicionComponent', () => {
-  let component: EstacEdicionComponent;
-  let fixture: ComponentFixture<EstacEdicionComponent>;
+describe('EstacComponent', () => {
+  let component: EstacComponent;
+  let fixture: ComponentFixture<EstacComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EstacEdicionComponent ]
+      declarations: [ EstacComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EstacEdicionComponent);
+    fixture = TestBed.createComponent(EstacComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

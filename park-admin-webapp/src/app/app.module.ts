@@ -13,14 +13,15 @@ import {
   MatInputModule, MatPaginatorModule, MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
-import { EstacEdicionComponent } from './estac-edicion/estac-edicion.component';
-import { NivelDetailComponent } from './nivel-detail/nivel-detail.component';
+import { EstacComponent } from './components/estac/estac.component';
+import { NivelComponent } from './components/nivel/nivel.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EstacEdicionComponent,
-    NivelDetailComponent
+    EstacComponent,
+    NivelComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,8 @@ import { NivelDetailComponent } from './nivel-detail/nivel-detail.component';
     MatPaginatorModule,
     MatSidenavModule,
     MatIconModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

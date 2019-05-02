@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NivelDetailComponent } from './nivel-detail.component';
+import { NivelComponent } from './nivel.component';
 
-describe('NivelDetailComponent', () => {
-  let component: NivelDetailComponent;
-  let fixture: ComponentFixture<NivelDetailComponent>;
+describe('NivelComponent', () => {
+  let component: NivelComponent;
+  let fixture: ComponentFixture<NivelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NivelDetailComponent ]
+      declarations: [ NivelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NivelDetailComponent);
+    fixture = TestBed.createComponent(NivelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
