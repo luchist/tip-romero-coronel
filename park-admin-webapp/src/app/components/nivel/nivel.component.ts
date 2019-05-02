@@ -1,24 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import {PageEvent} from '@angular/material';
-import { Nivel } from '../model/nivel';
+import {Component, Input, OnInit} from '@angular/core';
+import {Nivel} from '../../model/nivel';
 
 @Component({
-  selector: 'app-estac-edicion',
-  templateUrl: './estac-edicion.component.html',
-  styleUrls: ['./estac-edicion.component.scss']
+  selector: 'app-nivel',
+  templateUrl: './nivel.component.html',
+  styleUrls: ['./nivel.component.scss']
 })
-export class EstacEdicionComponent implements OnInit {
-  pageEvent: PageEvent;
-  nivelSeleccionado: Nivel;
-  height: number;
-  width: number;
+export class NivelComponent implements OnInit {
+  @Input() nivel: Nivel;
   initialX: number;
   initialY: number;
 
   constructor() {
     this.initialX = 10;
     this.initialY = 90;
-   }
+  }
 
   ngOnInit() {
   }
