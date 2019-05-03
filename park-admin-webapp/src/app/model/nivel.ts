@@ -1,4 +1,5 @@
 import { Espacio } from './espacio';
+import { Auto } from './espacio';
 
 export class Nivel {
   numero: number;
@@ -11,5 +12,9 @@ export class Nivel {
     this.ancho = ancho;
     this.alto = alto;
     this.espacios = [];
+  }
+
+  agregarEspacio() {
+    this.espacios.push(new Auto());
   }
 }

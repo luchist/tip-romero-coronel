@@ -18,7 +18,7 @@
     </div>
     </form>
     <mat-grid-list cols="2" rowHeight="2:1">
-      <mat-grid-tile><button mat-fab color="primary" (click)="draw()">
+      <mat-grid-tile><button mat-fab color="primary" (click)="drawSpace()">
         <fa-layers>
           <fa-icon [icon]="['fas', 'car-side']" size="2x" transform="left-7"></fa-icon>
           <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-12 up-9"></fa-icon>
@@ -46,7 +46,10 @@
   </mat-drawer>
   <mat-drawer-content class="drawer-content">
     <div class="centered-container">
-      <canvas id="nivel-mapa"></canvas>
+      <div class="nivel-mapa" #mapa>
+        <div class="car-space" cdkDragBoundary=".nivel-mapa" cdkDrag>
+        </div>
+      </div>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

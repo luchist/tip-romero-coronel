@@ -16,6 +16,7 @@ import {
 import { EstacComponent } from './components/estac/estac.component';
 import { NivelComponent } from './components/nivel/nivel.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDividerModule
+    MatDividerModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

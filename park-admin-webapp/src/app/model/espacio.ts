@@ -1,10 +1,14 @@
 export class Espacio {
+    static currentId = 0;
+    id: number;
+
     x: number;
     y: number;
     ancho: number;
     alto: number;
 
-  constructor(x: number, y: number, ancho: number, alto: number) {
+  constructor(ancho: number, alto: number, x?: number, y?: number) {
+    this.id = Espacio.currentId++;
     this.x = x;
     this.y = y;
     this.ancho = ancho;
@@ -12,10 +16,10 @@ export class Espacio {
   }
 }
 
-class Auto extends Espacio {
+export class Auto extends Espacio {
 
-    constructor(x: number, y: number) {
-        super(x, y, 2.5, 4.5);
+    constructor() {
+        super(2.5, 4.5);
     }
 
 }
