@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Nivel} from '../../model/nivel';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-nivel',
@@ -8,15 +9,24 @@ import {Nivel} from '../../model/nivel';
 })
 export class NivelComponent implements OnInit {
   @Input() nivel: Nivel;
+  dimensionForm: FormGroup;
   initialX: number;
   initialY: number;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
     this.initialX = 10;
     this.initialY = 90;
   }
 
   ngOnInit() {
+    this.dimensionForm = this.fb.group({
+    ancho: [this.nivel.ancho, Validators.compose([
+      Validators.required, Validators.min(10)])
+    ],
+    alto: [this.nivel.alto, Validators.compose([
+      Validators.required, Validators.min(10)])
+    ],
+  });
   }
 
   draw() {
@@ -44,4 +54,12 @@ export class NivelComponent implements OnInit {
 
   }
 
+  isDisabled() {
+    return this.nivel.espacios.length !== 0 || this.dimensionForm.invalid;
+  }
+
+  onSubmit() {
+    this.nivel.ancho = this.dimensionForm.get('ancho').value as number;
+    this.nivel.alto = this.dimensionForm.get('alto').value as number;
+  }
 }

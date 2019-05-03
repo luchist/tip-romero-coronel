@@ -4,17 +4,25 @@
 }
 
 .drawer-container {
-  height: 448px;
+  height: 100%;
 }
 
 .drawer-content {
   padding-top: 20px;
 }
 
-.container-mapa {
+.centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-buttom {
+  margin-bottom: 8px;
+}
+
+.form-button {
+  text-align: center;
 }
 
 #nivel-mapa {
@@ -26,3 +34,5 @@
 .full-width {
   width: 100%;
 }
+
+
