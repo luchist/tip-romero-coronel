@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faParking, faCarSide, faWheelchair, faShuttleVan, faMotorcycle  } from '@fortawesome/free-solid-svg-icons';
+import { faParking, faCarSide, faWheelchair, faShuttleVan, faMotorcycle, faPlus, faMinus  } from '@fortawesome/free-solid-svg-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,6 +46,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 export class AppModule {
   constructor() {
-    library.add(faParking, faCarSide, faWheelchair, faShuttleVan, faMotorcycle);
+    library.add(faParking, faCarSide, faWheelchair, faShuttleVan, faMotorcycle, faPlus, faMinus);
   }
  }

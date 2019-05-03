@@ -1,5 +1,17 @@
 <mat-toolbar>
   <img src="assets/pa_logo.png" id="park-admin-logo" alt="ParkAdmin logo" width="50px">
   <span>ParkAdmin</span>
+  <span class="estac-spacer"></span>
+  <mat-paginator [length]="100"
+              [pageSize]="1"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              [hidePageSize]="true">
+</mat-paginator>
+  <button mat-icon-button color="primary">
+    <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+  </button>
+  <button mat-icon-button color="primary">
+    <fa-icon [icon]="['fas', 'minus']"></fa-icon>
+  </button>
 </mat-toolbar>
-<app-nivel [nivel]="pb()"></app-nivel>
+<app-nivel [nivel]="nivelSeleccionado"></app-nivel>
