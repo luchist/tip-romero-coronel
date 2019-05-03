@@ -1,17 +1,22 @@
 <mat-drawer-container class="drawer-container">
   <mat-drawer mode="side" class="drawer-example" opened >
+    <form [formGroup]="dimensionForm" novalidate (ngSubmit)="onSubmit()">
     <p>
       <mat-form-field class="full-width" >
         <mat-label>Ancho</mat-label>
-        <input matInput placeholder="Ancho (mts)" type="number" [(ngModel)]="nivel.ancho">
+        <input matInput placeholder="Ancho (mts)" type="number"  formControlName="ancho">
       </mat-form-field>
     </p>
     <p>
       <mat-form-field class="full-width" >
         <mat-label>Alto</mat-label>
-        <input matInput placeholder="Alto (mts)" type="number" [(ngModel)]="nivel.alto">
+        <input matInput placeholder="Alto (mts)" type="number"  formControlName="alto">
       </mat-form-field>
     </p>
+    <div class="centered-container form-buttom">
+     <button mat-raised-button color="primary" type="submit" [disabled]="isDisabled()">Guardar</button>
+    </div>
+    </form>
     <mat-grid-list cols="2" rowHeight="2:1">
       <mat-grid-tile><button mat-fab color="primary" (click)="draw()">
         <fa-layers>
@@ -40,7 +45,7 @@
     </mat-grid-list>
   </mat-drawer>
   <mat-drawer-content class="drawer-content">
-    <div class="container-mapa">
+    <div class="centered-container">
       <canvas id="nivel-mapa"></canvas>
     </div>
   </mat-drawer-content>

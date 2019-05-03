@@ -9,13 +9,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
-  MatCardModule, MatGridListModule, MatIconModule,
+  MatCardModule, MatDividerModule, MatGridListModule, MatIconModule,
   MatInputModule, MatPaginatorModule, MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
 import { EstacComponent } from './components/estac/estac.component';
 import { NivelComponent } from './components/nivel/nivel.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,9 @@ import {FormsModule} from '@angular/forms';
     MatSidenavModule,
     MatIconModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
