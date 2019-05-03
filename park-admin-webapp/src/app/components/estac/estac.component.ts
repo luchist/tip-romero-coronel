@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Estacionamiento} from '../../model/estacionamiento';
 import {Nivel} from '../../model/nivel';
 import {PageEvent} from '@angular/material';
+import {ESTAC} from '../../mock-estac';
 
 @Component({
   selector: 'app-estac',
@@ -11,16 +12,16 @@ import {PageEvent} from '@angular/material';
 export class EstacComponent implements OnInit {
   estac: Estacionamiento;
   nivelSeleccionado: Nivel;
+  CantDeNiveles: number;
 
   constructor() {
-    this.estac = new Estacionamiento();
-    this.nivelSeleccionado = this.estac.niveles[0];
   }
 
   ngOnInit() {
+    this.estac = ESTAC;
+    this.nivelSeleccionado = this.estac.niveles[0];
+    this.CantDeNiveles = this.estac.niveles.length;
   }
 
-  changePage($event: PageEvent) {
 
-  }
 }
