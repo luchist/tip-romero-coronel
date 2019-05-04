@@ -20,11 +20,11 @@ export class NivelComponent implements OnInit {
 
   ngOnInit() {
     this.dimensionForm = this.fb.group({
-    ancho: [this.nivel.ancho, Validators.compose([
-      Validators.required, Validators.min(10)])
+    ancho: [null, Validators.compose([
+      Validators.required, Validators.min(3)])
     ],
-    alto: [this.nivel.alto, Validators.compose([
-      Validators.required, Validators.min(10)])
+    alto: [null, Validators.compose([
+      Validators.required, Validators.min(2)])
     ],
   });
   }

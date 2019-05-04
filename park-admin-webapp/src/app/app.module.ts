@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faParking, faCarSide, faWheelchair, faShuttleVan, faMotorcycle,
-  faPlusCircle, faMinusCircle, faArrowCircleLeft, faArrowCircleRight  } from '@fortawesome/free-solid-svg-icons';
+  faPlusCircle, faMinusCircle, faArrowCircleLeft, faArrowCircleRight, faArrowsAltH, faArrowsAltV  } from '@fortawesome/free-solid-svg-icons';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -54,6 +54,7 @@ export class AppModule {
       faShuttleVan,
       faMotorcycle,
       faPlusCircle, faMinusCircle,
-      faArrowCircleLeft, faArrowCircleRight);
+      faArrowCircleLeft, faArrowCircleRight,
+       faArrowsAltH, faArrowsAltV);
   }
  }
