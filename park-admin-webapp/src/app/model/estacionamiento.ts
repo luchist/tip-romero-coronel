@@ -10,4 +10,13 @@ export class Estacionamiento {
     this.id = id;
     this.niveles = niveles;
   }
+
+  getNivelConNumero(numero: number) {
+    return this.niveles.find(nivel => (nivel.numero === numero));
+  }
+
+  agregarNivel(nivel: Nivel) {
+    this.niveles.push(nivel);
+  }
+
 }
