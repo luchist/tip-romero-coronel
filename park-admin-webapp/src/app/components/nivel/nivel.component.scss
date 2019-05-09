@@ -1,5 +1,5 @@
-.drawer-example{
-  padding: 20px;
+.drawer-edicion{
+  padding: 25px;
   width: 300px;
 }
 
@@ -11,24 +11,31 @@
   padding-top: 20px;
 }
 
+.radio-orientacion  {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.mat-title {
+ text-align: center !important;
+  padding-top: 25px;
+}
+
+.radio-button-orientacion {
+  margin: 15px;
+}
+
 .centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.form-buttom {
-  margin-bottom: 8px;
-}
-
-.form-button {
-  text-align: center;
-}
-
 #nivel-mapa {
   background-color: #4CAF50;
-  width: 600px;
-  height: 410px;
+  width: 850px;
+  height: 530px;
 }
 
 .full-width {
