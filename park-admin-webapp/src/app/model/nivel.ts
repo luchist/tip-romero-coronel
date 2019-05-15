@@ -1,15 +1,19 @@
-import { Espacio } from './espacio';
+import {Conjunto} from './conjunto';
+
 
 export class Nivel {
   numero: number;
-  ancho: number;
-  alto: number;
-  espacios: Espacio[];
+  orientacion: Orientacion;
+  conjuntos: Conjunto[];
 
-  constructor(numero: number, ancho: number, alto: number) {
+  constructor(numero: number) {
     this.numero = numero;
-    this.ancho = ancho;
-    this.alto = alto;
-    this.espacios = [];
+    this.conjuntos = [];
   }
+}
+
+
+enum Orientacion {
+  Horizontal,
+  Vertical,
 }

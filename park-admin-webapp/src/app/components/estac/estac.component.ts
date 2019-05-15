@@ -43,7 +43,7 @@ export class EstacComponent implements OnInit {
   }
 
   agregarNivel() {
-    const nuevoNivel = new Nivel(this.cantDeNiveles + 1, 40, 60);
+    const nuevoNivel = new Nivel(this.cantDeNiveles + 1);
     this.estac.agregarNivel(nuevoNivel);
     this.cantDeNiveles += 1;
     this.irAlNivel(this.cantDeNiveles);

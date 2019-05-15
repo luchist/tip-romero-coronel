@@ -2,26 +2,41 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faParking, faCarSide, faWheelchair, faShuttleVan, faMotorcycle,
-  faPlusCircle, faMinusCircle, faArrowCircleLeft, faArrowCircleRight, faArrowsAltH, faArrowsAltV  } from '@fortawesome/free-solid-svg-icons';
+import {
+  faParking,
+  faCarSide,
+  faWheelchair,
+  faShuttleVan,
+  faMotorcycle,
+  faPlusCircle,
+  faMinusCircle,
+  faArrowCircleLeft,
+  faArrowCircleRight,
+  faArrowsAltH,
+  faArrowsAltV
+} from '@fortawesome/free-solid-svg-icons';
+import {faTrashAlt} from '@fortawesome/free-regular-svg-icons';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatCardModule, MatDividerModule, MatGridListModule, MatIconModule,
-  MatInputModule, MatPaginatorModule, MatSidenavModule,
+  MatInputModule, MatPaginatorModule, MatRadioModule, MatSidenavModule,
   MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import { EstacComponent } from './components/estac/estac.component';
-import { NivelComponent } from './components/nivel/nivel.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NivelEdicionComponent } from './components/nivel-edicion/nivel-edicion.component';
+import { NivelMapaComponent } from './components/nivel-mapa/nivel-mapa.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EstacComponent,
-    NivelComponent
+    NivelEdicionComponent,
+    NivelMapaComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +54,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatDividerModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -55,6 +71,7 @@ export class AppModule {
       faMotorcycle,
       faPlusCircle, faMinusCircle,
       faArrowCircleLeft, faArrowCircleRight,
-       faArrowsAltH, faArrowsAltV);
+       faArrowsAltH, faArrowsAltV,
+      faTrashAlt);
   }
  }

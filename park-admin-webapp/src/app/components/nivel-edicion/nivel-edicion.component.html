@@ -1,28 +1,13 @@
 <mat-drawer-container class="drawer-container">
-  <mat-drawer mode="side" class="drawer-example" opened >
-    <form [formGroup]="dimensionForm" novalidate (ngSubmit)="onSubmit()">
-    <p>
-      <mat-form-field class="full-width" hintLabel="Min 3 ms">
-        <mat-label>Ancho</mat-label>
-        <input matInput placeholder="Ancho (ms)" type="number"  formControlName="ancho">
-        <span matSuffix>{{nivel.ancho}} ms     </span>  
-        <fa-icon matSuffix [icon]="['fas', 'arrows-alt-h']"></fa-icon>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field class="full-width" hintLabel="Min 2 ms" >
-        <mat-label>Alto</mat-label>
-        <input matInput placeholder="Alto (ms)" type="number"  formControlName="alto">
-        <span matSuffix>{{nivel.alto}} ms      </span>  
-        <fa-icon matSuffix [icon]="['fas', 'arrows-alt-v']">{{nivel.alto}} ms</fa-icon>
-      </mat-form-field>
-    </p>
-    <div class="centered-container form-buttom">
-     <button mat-raised-button color="primary" type="submit" [disabled]="isDisabled()">Guardar</button>
-    </div>
-    </form>
-    <mat-grid-list cols="2" rowHeight="2:1">
-      <mat-grid-tile><button mat-fab color="primary" (click)="draw()">
+  <mat-drawer mode="side" class="drawer-edicion" opened >
+    <label id="label-orientacion" >Orientación:</label>
+    <mat-radio-group class="radio-orientacion" aria-labelledby="label-orientacion">
+      <mat-radio-button class="radio-button-orientacion" color="primary">Horizontal</mat-radio-button>
+      <mat-radio-button class="radio-button-orientacion" color="primary">Vertical</mat-radio-button>
+    </mat-radio-group>
+    <h2 class="mat-title">{{conjuntoSeleccionado}}</h2>
+    <mat-grid-list cols="2" rowHeight="70px">
+      <mat-grid-tile><button mat-fab color="primary">
         <fa-layers>
           <fa-icon [icon]="['fas', 'car-side']" size="2x" transform="left-7"></fa-icon>
           <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-12 up-9"></fa-icon>
@@ -46,11 +31,12 @@
           <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-12 up-9"></fa-icon>
         </fa-layers>
       </button></mat-grid-tile>
+      <mat-grid-tile [colspan]="2"><button mat-fab color="primary">
+        <fa-icon [icon]="['far', 'trash-alt']" size="2x"></fa-icon>
+      </button></mat-grid-tile>
     </mat-grid-list>
   </mat-drawer>
   <mat-drawer-content class="drawer-content">
-    <div class="centered-container">
-      <canvas id="nivel-mapa"></canvas>
-    </div>
+    <app-nivel-mapa></app-nivel-mapa>
   </mat-drawer-content>
 </mat-drawer-container>
