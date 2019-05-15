@@ -26,15 +26,17 @@ import {
   MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import { EstacComponent } from './components/estac/estac.component';
-import { NivelComponent } from './components/nivel/nivel.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NivelEdicionComponent } from './components/nivel-edicion/nivel-edicion.component';
+import { NivelMapaComponent } from './components/nivel-mapa/nivel-mapa.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EstacComponent,
-    NivelComponent
+    NivelEdicionComponent,
+    NivelMapaComponent
   ],
   imports: [
     BrowserModule,

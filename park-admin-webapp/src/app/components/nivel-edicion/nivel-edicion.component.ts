@@ -3,11 +3,11 @@ import {Nivel} from '../../model/nivel';
 import {Conjunto} from '../../model/conjunto';
 
 @Component({
-  selector: 'app-nivel',
-  templateUrl: './nivel.component.html',
-  styleUrls: ['./nivel.component.scss']
+  selector: 'app-nivel-edicion',
+  templateUrl: './nivel-edicion.component.html',
+  styleUrls: ['./nivel-edicion.component.scss']
 })
-export class NivelComponent implements OnInit, AfterViewInit {
+export class NivelEdicionComponent implements OnInit, AfterViewInit {
   @Input() nivel: Nivel;
   conjuntoSeleccionado: Conjunto;
   @ViewChild('nivel-mapa') nivelMapa: ElementRef;
