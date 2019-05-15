@@ -1,0 +1,42 @@
+<mat-drawer-container class="drawer-container">
+  <mat-drawer mode="side" class="drawer-edicion" opened >
+    <label id="label-orientacion" >Orientación:</label>
+    <mat-radio-group class="radio-orientacion" aria-labelledby="label-orientacion">
+      <mat-radio-button class="radio-button-orientacion" color="primary">Horizontal</mat-radio-button>
+      <mat-radio-button class="radio-button-orientacion" color="primary">Vertical</mat-radio-button>
+    </mat-radio-group>
+    <h2 class="mat-title">{{conjuntoSeleccionado}}</h2>
+    <mat-grid-list cols="2" rowHeight="70px">
+      <mat-grid-tile><button mat-fab color="primary">
+        <fa-layers>
+          <fa-icon [icon]="['fas', 'car-side']" size="2x" transform="left-7"></fa-icon>
+          <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-12 up-9"></fa-icon>
+        </fa-layers>
+      </button></mat-grid-tile>
+      <mat-grid-tile><button mat-fab color="primary">
+        <fa-layers>
+          <fa-icon [icon]="['fas', 'motorcycle']" size="2x" transform="left-8"></fa-icon>
+          <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-14 up-9"></fa-icon>
+        </fa-layers>
+      </button></mat-grid-tile>
+      <mat-grid-tile><button mat-fab color="primary">
+        <fa-layers>
+          <fa-icon [icon]="['fas', 'shuttle-van']" size="2x" transform="left-8"></fa-icon>
+          <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-14 up-9"></fa-icon>
+        </fa-layers>
+      </button></mat-grid-tile>
+      <mat-grid-tile><button mat-fab color="primary">
+        <fa-layers>
+          <fa-icon [icon]="['fas', 'wheelchair']" size="2x" transform="left-4"></fa-icon>
+          <fa-icon [icon]="['fas', 'parking']"  size="lg" transform="shrink-6 right-12 up-9"></fa-icon>
+        </fa-layers>
+      </button></mat-grid-tile>
+      <mat-grid-tile [colspan]="2"><button mat-fab color="primary">
+        <fa-icon [icon]="['far', 'trash-alt']" size="2x"></fa-icon>
+      </button></mat-grid-tile>
+    </mat-grid-list>
+  </mat-drawer>
+  <mat-drawer-content class="drawer-content">
+    <app-nivel-mapa></app-nivel-mapa>
+  </mat-drawer-content>
+</mat-drawer-container>

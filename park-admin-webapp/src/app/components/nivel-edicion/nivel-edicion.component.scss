@@ -1,0 +1,31 @@
+.drawer-edicion{
+  padding: 25px;
+  width: 300px;
+}
+
+.drawer-container {
+  height: 100%;
+}
+
+.drawer-content {
+  padding-top: 20px;
+}
+
+.radio-orientacion  {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.mat-title {
+  text-align: center !important;
+  padding-top: 25px;
+}
+
+.radio-button-orientacion {
+  margin: 15px;
+}
+
+.full-width {
+  width: 100%;
+}
