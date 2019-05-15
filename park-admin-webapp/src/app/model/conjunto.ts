@@ -1,11 +1,12 @@
 import {Espacio} from './espacio';
 
 export class Conjunto {
-  numero: number;
+  x: number;
+  y: number;
+  ancho: number;
   espacios: Espacio[];
 
-  constructor(numero: number) {
-    this.numero = numero;
+  constructor() {
     this.espacios = [];
   }
 

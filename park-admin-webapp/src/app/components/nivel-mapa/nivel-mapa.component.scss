@@ -2,10 +2,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top:270px;
 }
 
-#nivel-mapa {
-  background-color: #4CAF50;
+%capa-base {
+  position: absolute;
   width: 850px;
   height: 530px;
+}
+
+
+#capa-efectos {
+  @extend %capa-base;
+  z-index: 1;
+}
+
+#capa-principal {
+  @extend %capa-base;
+  z-index: 0;
+  background-color: #4CAF50;
 }
