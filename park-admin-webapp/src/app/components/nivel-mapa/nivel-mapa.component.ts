@@ -42,8 +42,8 @@ export class NivelMapaComponent implements AfterViewInit {
                     this.getPosition(lastEvent))
                   )
                 )),
-              takeUntil(fromEvent(this.canvasDeEfectos, 'mouseleave')),
-              finalize(() => this.borrarCanvas()),
+              takeUntil(fromEvent(this.canvasDeEfectos, 'mouseleave')
+              .pipe(tap(() => this.borrarCanvas()))),
               map((event: MouseEvent, i) => {
                 if (i === 0) { firstEvent = event; }
                 return [firstEvent, event];
