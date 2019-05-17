@@ -7,11 +7,16 @@ import {Nivel} from '../model/nivel';
   providedIn: 'root'
 })
 export class EstacionamientoService {
+  nivelSeleccionado: Nivel;
 
   constructor() { }
 
   getNiveles(): Observable<Nivel[]> {
     return of(ESTAC.niveles);
+  }
+
+  crearConjunto(conj: { ancho: number; x: number; y: number; largo: number }) {
+
   }
 
 }
