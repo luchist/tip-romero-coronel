@@ -50,9 +50,11 @@ export class EstacComponent implements OnInit {
   }
 
   eliminarNivel() {
-    this.estac.eliminarNivel();
-    this.cantDeNiveles -= 1;
-    this.irAlNivel(this.cantDeNiveles);
+    if (this.cantDeNiveles > 1) {
+      this.estac.eliminarNivel();
+      this.cantDeNiveles -= 1;
+      this.irAlNivel(this.cantDeNiveles);
+    }
   }
 
 }
