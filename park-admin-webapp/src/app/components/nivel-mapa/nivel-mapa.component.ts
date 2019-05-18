@@ -2,12 +2,14 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { switchMap, takeUntil, map, tap, finalize } from 'rxjs/operators';
 import {Conjunto} from '../../model/conjunto';
+import {EstacionamientoService} from '../../service/estacionamiento.service';
 
 
 @Component({
   selector: 'app-nivel-mapa',
   templateUrl: './nivel-mapa.component.html',
-  styleUrls: ['./nivel-mapa.component.scss']
+  styleUrls: ['./nivel-mapa.component.scss'],
+  providers: [EstacionamientoService]
 })
 export class NivelMapaComponent implements AfterViewInit {
   @ViewChild('mapa') mapa: ElementRef;
@@ -15,6 +17,8 @@ export class NivelMapaComponent implements AfterViewInit {
   @ViewChild('efectos') efectos: ElementRef;
   private canvasDeEfectos: HTMLCanvasElement;
   private cxEfectos: CanvasRenderingContext2D;
+
+  constructor(private estacService: EstacionamientoService) {}
 
   public ngAfterViewInit() {
     this.canvasDeEfectos = this.efectos.nativeElement;
@@ -63,11 +67,15 @@ export class NivelMapaComponent implements AfterViewInit {
   }
 
   crearConjunto(firstPos: { x: number, y: number }, lastPos: { x: number, y: number }) {
-    const conjunto = new Conjunto();
-    conjunto.x = firstPos.x;
-    conjunto.y = firstPos.y;
-    conjunto.ancho = lastPos.x - firstPos.x;
-    const largo = lastPos.y - firstPos.y;
+    const conjuntoACrear = new Conjunto(
+      firstPos.x,
+      firstPos.y,
+      lastPos.x - firstPos.x,
+      lastPos.y - firstPos.y
+    );
+
+    this.estacService.crearConjunto();
+
   }
 
   dibujarCuadradoDeCreacionDeConjunto(firstPos: { x: number, y: number }, currentPos: { x: number, y: number }) {

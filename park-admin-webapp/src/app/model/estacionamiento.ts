@@ -19,4 +19,10 @@ export class Estacionamiento {
     this.niveles.push(nivel);
   }
 
+  eliminarNivel() {
+    if (this.niveles.length > 1) {
+      this.niveles.pop();
+    }
+  }
+
 }
