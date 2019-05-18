@@ -4,7 +4,7 @@
     <p>
       <mat-form-field class="full-width" hintLabel="Min 3 ms">
         <mat-label>Ancho</mat-label>
-        <input matInput placeholder="Ancho (ms)" type="number"  formControlName="ancho">
+        <input matInput placeholder="Ancho (ms)" type="number"  value="{{nivel.ancho}}" formControlName="ancho">
         <span matSuffix>{{nivel.ancho}} ms     </span>  
         <fa-icon matSuffix [icon]="['fas', 'arrows-alt-h']"></fa-icon>
       </mat-form-field>
@@ -12,9 +12,9 @@
     <p>
       <mat-form-field class="full-width" hintLabel="Min 2 ms" >
         <mat-label>Alto</mat-label>
-        <input matInput placeholder="Alto (ms)" type="number"  formControlName="alto">
+        <input matInput placeholder="Alto (ms)" type="number"  value="{{nivel.alto}}" formControlName="alto">
         <span matSuffix>{{nivel.alto}} ms      </span>  
-        <fa-icon matSuffix [icon]="['fas', 'arrows-alt-v']">{{nivel.alto}} ms</fa-icon>
+        <fa-icon matSuffix [icon]="['fas', 'arrows-alt-v']"></fa-icon>
       </mat-form-field>
     </p>
     <div class="centered-container form-buttom">
