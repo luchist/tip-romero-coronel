@@ -1,6 +1,4 @@
-import { Injectable } from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {ESTAC} from '../mock-estac';
+import {Injectable} from '@angular/core';
 import {Nivel} from '../model/nivel';
 import {Conjunto} from '../model/conjunto';
 
@@ -8,44 +6,33 @@ import {Conjunto} from '../model/conjunto';
   providedIn: 'root'
 })
 export class EstacionamientoService {
-  nivelSeleccionado: Nivel;
 
   constructor() {
     this.nivelSeleccionado = new Nivel(2);
-    const conjuntos = [
+    this.nivelSeleccionado.conjuntos = [
       new Conjunto(20, 10, 100, 20),
       new Conjunto(20, 60, 50, 20),
       new Conjunto(60, 90, 30, 20)
-    ] ;
-    this.nivelSeleccionado.conjuntos = conjuntos;
+    ];
   }
-
-  getNiveles(): Observable<Nivel[]> {
-    return of(ESTAC.niveles);
-  }
-
-  /*crearConjunto(conj, nivel){
-    lo hace en el backend y recibe un conjunto a dibujar con las nuevas medidas o sino un error o alerta;
-  }
-*/
+  nivelSeleccionado: Nivel;
 
   crearConjunto(conj: { ancho: number; x: number; y: number; largo: number }) {
-    if (! this.esTamanioAdecuado(this.nivelSeleccionado, conj)) {
-      // tirar notificacion de tamanio no adecuado
+    if (!this.esTamanioAdecuado(this.nivelSeleccionado, conj)) {
+      return;
     }
     if (this.estaEspacioOcupado(conj, this.nivelSeleccionado.numero)) {
-      // tirar notificacion que esa ocupado ese lugar!
+      return;
     }
     if (this.nivelSeleccionado[0] !== undefined) {
       conj.largo = this.nivelSeleccionado[0].largo;
     }
-    this.juntarVecinos(this.nivelSeleccionado, conj); // vecino;
-    // agrego al modelo
-    return conj; // ya para dibujarse
+    this.juntarVecinos(this.nivelSeleccionado, conj);
+    return conj;
   }
 
-  esTamanioAdecuado(nivelSeleccionado: Nivel, conj: { ancho: number; x: number; y: number; largo: number }) {
-    return conj.ancho >= 120 && conj.largo >= 55;
+ esTamanioAdecuado(nivelSeleccionado: Nivel, conj: { ancho: number; x: number; y: number; largo: number }) {
+    return (conj.ancho > 121 && conj.largo > 56)  || (conj.ancho < 791 && conj.largo < 214);
   }
 
   estaEspacioOcupado(conj: { ancho: number; x: number; y: number; largo: number }, numero: number) {
@@ -59,15 +46,46 @@ export class EstacionamientoService {
   }
 
   juntarVecinos(nivelSeleccionado: Nivel, conj: { ancho: number; x: number; y: number; largo: number }) {
-    const estaAlLado = (conj1, conj2) => {
-      const h = conj1.x - conj2.x + conj2.ancho <= conj1.largo * 0.75;
-      const v = conj1.y - conj2.y + conj2.largo <= conj1.largo * 0.75;
-      };
-    const esVecino = (conj1, conj2) => {
-      const v = conj1.y >= conj2.y && conj1.y + conj1.largo <= conj2.y + conj2.largo;
-      const h = conj1.x >= conj2.x && conj1.x + conj1.ancho <= conj2.x + conj2.ancho;
-    };
+    this.nivelSeleccionado.conjuntos.forEach((c) => {
+      this.juntarVecinosAlaIzquierda(conj, c);
+      this.juntarVecinosALaDerecha(c, conj);
+      this.juntarVecinosArriba(conj, c);
+      this.juntarVecinosAbajo(c, conj);
+    });
+  }
 
+  sonJuntablesVertical(conj1, conj2) {
+    return conj1.x - conj2.x + conj2.ancho <= conj1.largo * 0.75 &&
+      conj1.y >= conj2.y && conj1.y + conj1.largo <= conj2.y + conj2.largo;
+  }
+
+  sonJuntablesHorizontal(conj1, conj2) {
+    return conj1.y - conj2.y + conj2.largo <= conj1.largo * 0.75 &&
+      conj1.x >= conj2.x && conj1.x + conj1.ancho <= conj2.x + conj2.ancho;
+  }
+
+  juntarVecinosAlaIzquierda(conj1, conj2) {
+    if (this.sonJuntablesVertical(conj1, conj2)) {
+      conj1.x = conj2.x + conj2.ancho;
+    }
+  }
+
+  juntarVecinosALaDerecha(conj1, conj2) {
+    if (this.sonJuntablesVertical(conj2, conj1)) {
+      conj1.x = conj2.x - conj1.ancho;
+    }
+  }
+
+  juntarVecinosArriba(conj1, conj2) {
+    if (this.sonJuntablesHorizontal(conj1, conj2)) {
+      conj1.y = conj2.y + conj2.largo;
+    }
+  }
+
+  juntarVecinosAbajo(conj1, conj2) {
+    if (this.sonJuntablesHorizontal(conj2, conj1)) {
+      conj1.y = conj2.y - conj1.largo;
+    }
   }
 
 }

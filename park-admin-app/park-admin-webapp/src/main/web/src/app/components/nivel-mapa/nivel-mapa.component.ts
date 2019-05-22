@@ -74,7 +74,11 @@ export class NivelMapaComponent implements AfterViewInit {
       lastPos.y - firstPos.y
     );
 
-    this.estacService.crearConjunto();
+    const conjCreado = this.estacService.crearConjunto(conjuntoACrear);
+    this.dibujarConjunto(conjCreado);
+  }
+
+  dibujarConjunto(conjCreado: { ancho: number; x: number; y: number; largo: number }) {
 
   }
 
