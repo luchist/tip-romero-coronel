@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Estacionamiento} from '../../model/estacionamiento';
 import {Nivel} from '../../model/nivel';
 import {ESTAC} from '../../mock-estac';
+import {EstacionamientoService} from '../../service/estacionamiento.service';
 
 @Component({
   selector: 'app-estac',
@@ -13,11 +14,11 @@ export class EstacComponent implements OnInit {
   nivelSeleccionado: Nivel;
   cantDeNiveles: number;
 
-  constructor() {
-  }
+  constructor(private estacService: EstacionamientoService) {}
 
   ngOnInit() {
-    this.estac = ESTAC;
+    this.estacService.getEstac()
+      .subscribe(e => this.estac = ESTAC);
     this.cantDeNiveles = this.estac.niveles.length;
     this.irAlNivel(1);
   }
