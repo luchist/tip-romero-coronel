@@ -1,23 +1,19 @@
 import {Injectable} from '@angular/core';
 import {Nivel} from '../model/nivel';
 import {Conjunto} from '../model/conjunto';
+import {ESTAC} from '../mock-estac';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EstacionamientoService {
-
-  constructor() {
-    this.nivelSeleccionado = new Nivel(2);
-    this.nivelSeleccionado.conjuntos = [
-      new Conjunto(20, 10, 100, 20),
-      new Conjunto(20, 60, 50, 20),
-      new Conjunto(60, 90, 30, 20)
-    ];
-  }
   nivelSeleccionado: Nivel;
 
-  crearConjunto(conj: { ancho: number; x: number; y: number; largo: number }) {
+  constructor() {
+    this.nivelSeleccionado = ESTAC.niveles[0];
+  }
+
+  crearConjunto(conj: Conjunto) {
     if (!this.esTamanioAdecuado(this.nivelSeleccionado, conj)) {
       return;
     }
@@ -31,7 +27,7 @@ export class EstacionamientoService {
     return conj;
   }
 
- esTamanioAdecuado(nivelSeleccionado: Nivel, conj: { ancho: number; x: number; y: number; largo: number }) {
+ esTamanioAdecuado(nivelSeleccionado: Nivel, conj: Conjunto) {
     return (conj.ancho > 121 && conj.largo > 56)  || (conj.ancho < 791 && conj.largo < 214);
   }
 
@@ -45,7 +41,7 @@ export class EstacionamientoService {
     return this.nivelSeleccionado.conjuntos.find((c) => seSuperponen(c, conj));
   }
 
-  juntarVecinos(nivelSeleccionado: Nivel, conj: { ancho: number; x: number; y: number; largo: number }) {
+  juntarVecinos(nivelSeleccionado: Nivel, conj: Conjunto) {
     this.nivelSeleccionado.conjuntos.forEach((c) => {
       this.juntarVecinosAlaIzquierda(conj, c);
       this.juntarVecinosALaDerecha(c, conj);

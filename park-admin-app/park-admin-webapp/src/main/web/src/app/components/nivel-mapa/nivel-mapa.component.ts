@@ -34,33 +34,40 @@ export class NivelMapaComponent implements AfterViewInit {
 
   capturarEventoDeCreacionDeConjunto() {
     let firstEvent: MouseEvent;
+    const down$ = fromEvent(this.canvasDeEfectos, 'mousedown');
+    const move$ = fromEvent(this.canvasDeEfectos, 'mousemove');
+    const up$ = fromEvent(this.canvasDeEfectos, 'mouseup');
+    const leave$ = fromEvent(this.canvasDeEfectos, 'mouseleave');
 
-    fromEvent(this.canvasDeEfectos, 'mousedown')
-      .pipe(
-        switchMap((e, index) => {
-          return fromEvent(this.canvasDeEfectos, 'mousemove')
+    down$.pipe(
+        switchMap(() => {
+          return move$
             .pipe(
-              takeUntil(
-                fromEvent(this.canvasDeEfectos, 'mouseup').pipe(
-                  tap((lastEvent: MouseEvent) => this.crearConjunto(this.getPosition(firstEvent),
-                    this.getPosition(lastEvent))
-                  )
-                )),
-              takeUntil(fromEvent(this.canvasDeEfectos, 'mouseleave')
-              .pipe(tap(() => this.borrarCanvas()))),
+              takeUntil(up$
+                .pipe(
+                tap((lastEvent: MouseEvent) =>
+                  this.crearConjunto(
+                    this.getPosition(firstEvent), this.getPosition(lastEvent))
+                )
+              )),
+              takeUntil(leave$),
+              finalize(() => this.borrarCanvas()),
               map((event: MouseEvent, i) => {
-                if (i === 0) { firstEvent = event; }
+                if (i === 0) {
+                  firstEvent = event;
+                }
                 return [firstEvent, event];
               })
             ); })
       )
-      .subscribe((res: [MouseEvent, MouseEvent]) => {
-        this.dibujarCuadradoDeCreacionDeConjunto(this.getPosition(res[0]), this.getPosition(res[1]));
+      .subscribe(([firstPos, lastPos]: [MouseEvent, MouseEvent]) => {
+        this.dibujarCuadradoDeCreacionDeConjunto(
+          this.getPosition(firstPos), this.getPosition(lastPos));
       });
-
   }
 
   getPosition(event: MouseEvent) {
+    console.log(event);
     const rect = this.canvasDeEfectos.getBoundingClientRect();
     return {x : event.clientX - rect.left,
       y: event.clientY - rect.top};
@@ -73,25 +80,23 @@ export class NivelMapaComponent implements AfterViewInit {
       lastPos.x - firstPos.x,
       lastPos.y - firstPos.y
     );
-
     const conjCreado = this.estacService.crearConjunto(conjuntoACrear);
-    this.dibujarConjunto(conjCreado);
-  }
-
-  dibujarConjunto(conjCreado: { ancho: number; x: number; y: number; largo: number }) {
-
+    if (conjCreado !== undefined) {
+      this.dibujarCuadrado(conjCreado.x, conjCreado.y, conjCreado.ancho, conjCreado.largo);
+    }
   }
 
   dibujarCuadradoDeCreacionDeConjunto(firstPos: { x: number, y: number }, currentPos: { x: number, y: number }) {
     if (!this.cxEfectos) { return; }
-
     const ancho = currentPos.x - firstPos.x;
     const largo = currentPos.y - firstPos.y;
-
     this.borrarCanvas();
+    this.dibujarCuadrado(firstPos.x, firstPos.y, ancho, largo);
+  }
 
+  dibujarCuadrado(x, y, ancho, largo) {
     this.cxEfectos.beginPath();
-    this.cxEfectos.rect(firstPos.x, firstPos.y, ancho, largo);
+    this.cxEfectos.rect(x, y, ancho, largo);
     this.cxEfectos.stroke();
   }
 
