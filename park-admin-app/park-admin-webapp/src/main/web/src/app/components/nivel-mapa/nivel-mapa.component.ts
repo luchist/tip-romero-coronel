@@ -106,9 +106,12 @@ export class NivelMapaComponent implements AfterViewInit {
       lastPos.x - this.firstPos.x,
       lastPos.y - this.firstPos.y
     );
-    const conjCreado = this.estacService.crearConjunto(conjuntoACrear);
-    if (conjCreado !== undefined) {
-      this.dibujarCuadrado(this.cxMapa, conjCreado.x, conjCreado.y, conjCreado.ancho, conjCreado.largo);
+    const resultado = this.estacService.crearConjunto(conjuntoACrear);
+    this.snackBar.open(resultado.alerta);
+    if (resultado.alerta === 'Conjunto creado!') {
+      this.dibujarCuadrado(
+        this.cxMapa, resultado.conjunto.x,
+        resultado.conjunto.y, resultado.conjunto.ancho, resultado.conjunto.largo);
     }
   }
 
