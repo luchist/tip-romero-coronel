@@ -23,7 +23,7 @@ import {
   MatButtonModule,
   MatCardModule, MatDividerModule, MatGridListModule, MatIconModule,
   MatInputModule, MatPaginatorModule, MatRadioModule, MatSidenavModule,
-  MatToolbarModule, MatTooltipModule
+  MatToolbarModule, MatTooltipModule, MatSnackBarModule
 } from '@angular/material';
 import { EstacComponent } from './components/estac/estac.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -55,7 +55,8 @@ import { NivelMapaComponent } from './components/nivel-mapa/nivel-mapa.component
     ReactiveFormsModule,
     MatDividerModule,
     MatTooltipModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

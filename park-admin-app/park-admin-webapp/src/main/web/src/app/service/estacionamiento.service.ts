@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {Nivel} from '../model/nivel';
 import {Conjunto} from '../model/conjunto';
 import {ESTAC} from '../mock-estac';
+import {Estacionamiento} from '../model/estacionamiento';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,18 +15,24 @@ export class EstacionamientoService {
     this.nivelSeleccionado = ESTAC.niveles[0];
   }
 
+  getEstac(): Observable<Estacionamiento> {
+    return of(ESTAC);
+  }
+
   crearConjunto(conj: Conjunto) {
+    const resultado = {conjunto: conj, alerta: 'Conjunto creado!'};
+
     if (!this.esTamanioAdecuado(this.nivelSeleccionado, conj)) {
-      return;
+      resultado.alerta = 'Tamanio no adecuado!';
     }
     if (this.estaEspacioOcupado(conj, this.nivelSeleccionado.numero)) {
-      return;
+      resultado.alerta = 'espacio ya ocupado!';
     }
     if (this.nivelSeleccionado[0] !== undefined) {
       conj.largo = this.nivelSeleccionado[0].largo;
     }
     this.juntarVecinos(this.nivelSeleccionado, conj);
-    return conj;
+    return resultado;
   }
 
  esTamanioAdecuado(nivelSeleccionado: Nivel, conj: Conjunto) {
@@ -33,12 +41,17 @@ export class EstacionamientoService {
 
   estaEspacioOcupado(conj: { ancho: number; x: number; y: number; largo: number }, numero: number) {
     const seSuperponen = (conj1, conj2) => {
-      return !(conj1.x > (conj2.x + conj2.w) ||
-        (conj1.x + conj1.w) < conj2.x ||
-        conj1.y > (conj2.y + conj2.h) ||
-        (conj1.y + conj1.h) < conj2.y);
+      return !(conj1.x > (conj2.x + conj2.ancho) ||
+        (conj1.x + conj1.ancho) < conj2.x ||
+        conj1.y > (conj2.y + conj2.largo) ||
+        (conj1.y + conj1.largo) < conj2.y);
     };
-    return this.nivelSeleccionado.conjuntos.find((c) => seSuperponen(c, conj));
+
+    return this.nivelSeleccionado.conjuntos.find((c) => {
+      console.log(c);
+      console.log(seSuperponen(c, conj));
+      return seSuperponen(c, conj);
+    });
   }
 
   juntarVecinos(nivelSeleccionado: Nivel, conj: Conjunto) {
