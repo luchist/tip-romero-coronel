@@ -1,5 +1,10 @@
-<div class="centered-container" >
+<div class="centered-container">
  <canvas #mapa id="capa-principal" width='850px' height='530px'></canvas>
- <canvas #efectos id="capa-efectos" width='850px' height='530px'></canvas>
+ <canvas #efectos id="capa-efectos" width='850px' height='530px'
+         (mousedown)="onMouseDown($event.clientX, $event.clientY)"
+         (mousemove)="onMouseMove($event.clientX, $event.clientY)"
+         (mouseup)="onMouseUp($event.clientX, $event.clientY)"
+         (mouseout)="onMouseOut()"
+ ></canvas>
 </div>
 
