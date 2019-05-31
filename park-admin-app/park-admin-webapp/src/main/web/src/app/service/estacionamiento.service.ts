@@ -62,25 +62,25 @@ export class EstacionamientoService {
   }
 
   juntarVecinosAlaIzquierda(conj1: Conjunto, conj2: Conjunto) {
-    if (this.sonJuntablesVertical(conj1, conj2)) {
+    if (this.sonJuntablesHorizontal(conj1, conj2)) {
       conj1.x = conj2.x + conj2.ancho;
     }
   }
 
   juntarVecinosALaDerecha(conj1: Conjunto, conj2: Conjunto) {
-    if (this.sonJuntablesVertical(conj2, conj1)) {
+    if (this.sonJuntablesHorizontal(conj2, conj1)) {
       conj1.x = conj2.x - conj1.ancho;
     }
   }
 
   juntarVecinosArriba(conj1: Conjunto, conj2: Conjunto) {
-    if (this.sonJuntablesHorizontal(conj1, conj2)) {
+    if (this.sonJuntablesVertical(conj1, conj2)) {
       conj1.y = conj2.y + conj2.largo;
     }
   }
 
   juntarVecinosAbajo(conj1: Conjunto, conj2: Conjunto) {
-    if (this.sonJuntablesHorizontal(conj2, conj1)) {
+    if (this.sonJuntablesVertical(conj2, conj1)) {
       conj1.y = conj2.y - conj1.largo;
     }
   }
