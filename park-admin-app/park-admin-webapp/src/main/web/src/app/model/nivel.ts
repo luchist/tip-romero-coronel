@@ -8,9 +8,10 @@ export class Nivel {
 
   constructor(numero: number) {
     this.numero = numero;
-    this.orientacion = Orientacion.Vertical;
+    this.orientacion = Orientacion.Horizontal;
     this.conjuntos = [];
   }
+
 }
 
 

@@ -5,9 +5,9 @@ import {Conjunto} from './model/conjunto';
 
 const nivel1 = new Nivel(1);
 nivel1.conjuntos = [
-  new Conjunto(10, 30, 825, 100),
-  new Conjunto(10, 200, 418, 100),
-  new Conjunto(544, 200, 296, 100)
+  new Conjunto(10, 20, 825, 50),
+  new Conjunto(10, 100, 418, 50),
+  new Conjunto(544, 100, 296, 50)
 ];
 
 const niveles: Nivel[] = [

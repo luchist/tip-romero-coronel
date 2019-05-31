@@ -112,6 +112,7 @@ export class NivelMapaComponent implements AfterViewInit {
       this.dibujarCuadrado(
         this.cxMapa, resultado.conjunto.x,
         resultado.conjunto.y, resultado.conjunto.ancho, resultado.conjunto.largo);
+      this.nivelAMapear.conjuntos.push(resultado.conjunto);
     }
   }
 
