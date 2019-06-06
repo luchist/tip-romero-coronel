@@ -142,11 +142,6 @@ export class NivelMapaComponent implements AfterViewInit {
 }
 
   estaSeleccionandoConjunto(lastPos: { x: number; y: number }) {
-    const minx = Math.min(this.firstPos.x, lastPos.x);
-    const maxx = Math.max(this.firstPos.x, lastPos.x);
-    const miny = Math.min(this.firstPos.y, lastPos.y);
-    const maxy = Math.max(this.firstPos.y, lastPos.y);
-
-    return maxx - minx <= 4 &&  maxy - miny <= 4;
+    return Math.abs(this.firstPos.x - lastPos.x) <= 4 &&  Math.abs(this.firstPos.y - lastPos.y) <= 4;
   }
 }

@@ -31,6 +31,7 @@ import { NivelEdicionComponent } from './components/nivel-edicion/nivel-edicion.
 import { NivelMapaComponent } from './components/nivel-mapa/nivel-mapa.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
