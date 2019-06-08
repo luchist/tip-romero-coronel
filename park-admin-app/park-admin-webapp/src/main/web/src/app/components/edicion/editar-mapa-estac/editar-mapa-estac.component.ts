@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {Estacionamiento} from '../../model/estacionamiento';
-import {Nivel} from '../../model/nivel';
-import {ESTAC} from '../../mock-estac';
-import {EstacionamientoService} from '../../service/estacionamiento.service';
+import {Estacionamiento} from '../../../model/estacionamiento';
+import {Nivel} from '../../../model/nivel';
+import {EstacionamientoService} from '../../../service/estacionamiento.service';
+import {ESTAC} from '../../../mock-estac';
 
 @Component({
   selector: 'app-estac',
-  templateUrl: './estac.component.html',
-  styleUrls: ['./estac.component.scss']
+  templateUrl: './editar-mapa-estac.component.html',
+  styleUrls: ['./editar-mapa-estac.component.scss']
 })
-export class EstacComponent implements OnInit {
+export class EditarMapaEstacComponent implements OnInit {
   estac: Estacionamiento;
   nivelSeleccionado: Nivel;
   cantDeNiveles: number;

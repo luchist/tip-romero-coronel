@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EstacComponent } from './estac.component';
+import { EditarMapaEstacComponent } from './editar-mapa-estac.component';
 
-describe('EstacComponent', () => {
-  let component: EstacComponent;
-  let fixture: ComponentFixture<EstacComponent>;
+describe('EditarMapaEstacComponent', () => {
+  let component: EditarMapaEstacComponent;
+  let fixture: ComponentFixture<EditarMapaEstacComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EstacComponent ]
+      declarations: [ EditarMapaEstacComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EstacComponent);
+    fixture = TestBed.createComponent(EditarMapaEstacComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

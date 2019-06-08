@@ -25,19 +25,25 @@ import {
   MatInputModule, MatPaginatorModule, MatRadioModule, MatSidenavModule,
   MatToolbarModule, MatTooltipModule, MatSnackBarModule
 } from '@angular/material';
-import { EstacComponent } from './components/estac/estac.component';
+import { EditarMapaEstacComponent } from './components/edicion/editar-mapa-estac/editar-mapa-estac.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NivelEdicionComponent } from './components/nivel-edicion/nivel-edicion.component';
 import { NivelMapaComponent } from './components/nivel-mapa/nivel-mapa.component';
+import { NivelComponent } from './components/edicion/editar-mapa-estac/nivel/nivel.component';
+import { ConjuntoComponent } from './components/edicion/editar-mapa-estac/nivel/conjunto/conjunto.component';
+import { MapaComponent } from './components/edicion/editar-mapa-estac/nivel/mapa/mapa.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EstacComponent,
+    EditarMapaEstacComponent,
     NivelEdicionComponent,
-    NivelMapaComponent
+    NivelMapaComponent,
+    NivelComponent,
+    ConjuntoComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
