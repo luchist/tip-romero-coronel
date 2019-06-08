@@ -20,7 +20,7 @@ export class Estacionamiento {
   }
 
   eliminarNivel() {
-    if (this.niveles.length > 1) {
+    if (this.niveles.length >= 1) {
       this.niveles.pop();
     }
   }

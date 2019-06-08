@@ -2,23 +2,29 @@
   <img src="assets/pa_logo.png" id="park-admin-logo" alt="ParkAdmin logo" width="50px">
   <span>ParkAdmin</span>
   <span class="title-spacer"></span>
-  <span class="paginator-font">Nivel {{nivelSeleccionado.numero}} de {{cantDeNiveles}} </span>
-  <button mat-icon-button color="primary" matTooltip="Anterior"
-          [disabled]="esPrimerNivel()"
-          (click)="irAlNivelAnterior()">
-    <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg"></fa-icon>
-  </button>
-  <button mat-icon-button color="primary" matTooltip="Siguiente"
-          [disabled]="esUltimoNivel()"
-          (click)="irAlNivelSiguiente()">
-    <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg"></fa-icon>
-  </button>
-  <span class="buttom-spacer"></span>
-  <button mat-icon-button color="primary" matTooltip="Agregar nivel" (click)="agregarNivel()">
-    <fa-icon [icon]="['fas', 'plus-circle']" size="lg"></fa-icon>
-  </button>
-  <button mat-icon-button color="primary" matTooltip="Eliminar nivel" (click)="eliminarNivel()">
-    <fa-icon [icon]="['fas', 'minus-circle']" size="lg"></fa-icon>
-  </button>
 </mat-toolbar>
+
 <app-nivel-edicion [nivel]="nivelSeleccionado"></app-nivel-edicion>
+
+<div class = "nivel-footer-container">
+<mat-toolbar class="nivel-footer">
+    <span class="paginator-font">Nivel {{nivelSeleccionado.numero}} de {{cantDeNiveles}} </span>
+    <button mat-icon-button color="primary" matTooltip="Anterior"
+            [disabled]="esPrimerNivel()"
+            (click)="irAlNivelAnterior()">
+      <fa-icon [icon]="['fas', 'arrow-circle-left']" size="lg"></fa-icon>
+    </button>
+    <button mat-icon-button color="primary" matTooltip="Siguiente"
+            [disabled]="esUltimoNivel()"
+            (click)="irAlNivelSiguiente()">
+      <fa-icon [icon]="['fas', 'arrow-circle-right']" size="lg"></fa-icon>
+    </button>
+    <span class="buttom-spacer"></span>
+    <button mat-icon-button color="primary" matTooltip="Agregar nivel" (click)="agregarNivel()">
+      <fa-icon [icon]="['fas', 'plus-circle']" size="lg"></fa-icon>
+    </button>
+    <button mat-icon-button color="primary" matTooltip="Eliminar nivel" (click)="eliminarNivel()">
+      <fa-icon [icon]="['fas', 'minus-circle']" size="lg"></fa-icon>
+    </button>
+</mat-toolbar>
+</div>

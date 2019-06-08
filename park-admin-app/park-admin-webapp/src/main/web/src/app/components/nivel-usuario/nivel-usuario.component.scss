@@ -1,0 +1,23 @@
+.nivel-usuario-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:270px;
+}
+
+.nivel-usuario-container div{
+    border-style: dashed;
+    padding: 40px;
+}
+
+.ocupado{
+    background-color: red;
+}
+
+.libre{
+    background-color: green;
+}
+  
+.body{
+    margin:0;
+}
