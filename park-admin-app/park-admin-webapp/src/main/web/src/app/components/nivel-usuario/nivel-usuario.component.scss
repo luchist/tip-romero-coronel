@@ -5,9 +5,10 @@
     padding-top:270px;
 }
 
-.nivel-usuario-container div{
+#espacios div{
     border-style: dashed;
     padding: 40px;
+    z-index: 1;
 }
 
 .ocupado{
@@ -17,7 +18,10 @@
 .libre{
     background-color: green;
 }
-  
-.body{
-    margin:0;
+
+#capa-principal {
+    position: absolute;
+    z-index: 0;
+    background-color: #4CAF50;
+    justify-content: center;
 }

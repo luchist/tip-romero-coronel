@@ -1,9 +1,8 @@
-.drawer-edicion{
+.drawer-usuario-buttons{
     padding: 25px;
     width: 300px;
   }
-  
-  .drawer-usuario {
+  .drawer-container {
     height: 100%;
     max-height: 80%;
   }
@@ -11,20 +10,10 @@
   .drawer-content {
     padding-top: 20px;
   }
-  
-  .radio-orientacion  {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-  }
-  
+    
   .mat-title {
     text-align: center !important;
     padding-top: 25px;
-  }
-  
-  .radio-button-orientacion {
-    margin: 15px;
   }
   
   .full-width {

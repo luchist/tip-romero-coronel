@@ -69,6 +69,7 @@ export class NivelMapaComponent implements AfterViewInit {
       this.seleccionarConjunto();
     } else {
       this.guardarConjunto(lastPos);
+      localStorage.setItem('mapa-estac', this.canvasDeMapa.toDataURL());
     }
     this.firstPos = undefined;
     this.borrarCanvasDeEfectos();

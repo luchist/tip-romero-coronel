@@ -29,6 +29,9 @@ import { EstacComponent } from './components/estac/estac.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NivelEdicionComponent } from './components/nivel-edicion/nivel-edicion.component';
 import { NivelMapaComponent } from './components/nivel-mapa/nivel-mapa.component';
+import { NivelUsuarioComponent } from './components/nivel-usuario/nivel-usuario.component';
+import { NivelUsuarioToolbarComponent } from './components/nivel-usuario-toolbar/nivel-usuario-toolbar.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { NivelMapaComponent } from './components/nivel-mapa/nivel-mapa.component
     AppComponent,
     EstacComponent,
     NivelEdicionComponent,
-    NivelMapaComponent
+    NivelMapaComponent,
+    NivelUsuarioComponent,
+    NivelUsuarioToolbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

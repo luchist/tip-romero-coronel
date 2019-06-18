@@ -1,0 +1,19 @@
+<div class="home-container">
+<mat-card class="login-container">
+    <mat-form-field appearance=outline>
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Usuario">
+    </mat-form-field>
+  
+    <mat-form-field appearance=outline>
+      <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-label>Password</mat-label>
+    </mat-form-field>
+ 
+    <button mat-button color="primary">LogIn</button>
+
+</mat-card>
+</div>
